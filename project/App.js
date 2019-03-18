@@ -1,21 +1,29 @@
-import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import Topbar from './components/Topbar'
+import {createAppContainer,
+    createBottomTabNavigator,
+    TabBarBottom} from 'react-navigation';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
-        <View style={styles.container}>
-          <Topbar />
-        </View>
-      </SafeAreaView>
-    );
-  }
-}
+import DashboardScreen from './components/screens/DashboardScreen/DashboardScreen';
+import CheckInScreen from './components/screens/CheckInScreen/CheckInScreen';
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#ffffff'
-  },
-});
+const AppContainer = createAppContainer(
+    createBottomTabNavigator(
+        {
+            Dashboard: DashboardScreen,
+            NewCheckIn: CheckInScreen
+        },
+        {
+            navigationOptions: ({navigation}) => ({
+                tabBarComponent: TabBarBottom,
+                tabBarPosition: 'bottom',
+                tabBarOptions: {
+                    activeTintColor: 'tomato',
+                    inactiveTintColor: 'gray'
+                },
+                animationEnabled: true,
+                swipeEnabled: false
+            })
+        }
+    )
+);
+
+export default AppContainer;
