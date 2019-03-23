@@ -22,8 +22,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: 'gainsboro',
-    width: '100%',
-    padding: '1%'
+    width: '100%'
   },
   rowContainer: {
     alignItems: 'center',
@@ -33,11 +32,15 @@ const styles = StyleSheet.create({
   },
   gameCategoryText: {
     alignSelf: 'flex-start',
-    color: 'gray'
+    color: 'gray',
+    fontSize: 16,
+    padding: '4%'
   },
   giftText: {
     alignSelf: 'flex-end',
-    color: 'gray'
+    color: 'gray',
+    fontSize: 16,
+    padding: '4%'
   }
   
 });
