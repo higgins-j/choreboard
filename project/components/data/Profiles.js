@@ -63,36 +63,4 @@ export var profiles = [
         "points": "150",
         "place": "8"
     },
-    {
-        "name": {
-            "first": "Thomas",
-            "last": "Conte"
-        },
-        "points": "150",
-        "place": "9"
-    },
-    {
-        "name": {
-            "first": "John",
-            "last": "Doe"
-        },
-        "points": "1586766789778870",
-        "place": "10"
-    },
-    {
-        "name": {
-            "first": "NKJFbkjdbshgbhbiusfdfdf",
-            "last": "asfknskdfbsakhihgsdf-sidgghfu"
-        },
-        "points": "1876565789876567897654678765450",
-        "place": "255"
-    },
-    {
-        "name": {
-            "first": "Freddy",
-            "last": "Krueger"
-        },
-        "points": "150",
-        "place": "1849985478"
-    },
 ];

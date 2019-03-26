@@ -10,6 +10,10 @@ import TaskCompleteScreen from './components/screens/Checklist Screens/TaskCompl
 import StatisticsScreen from './components/screens/StatisticsScreen/StatisticsScreen';
 import MessagesScreen from './components/screens/MessagesScreen/MessagesScreen';
 
+const firebaseConfig = {
+
+}
+
 const ChecklistStack = createStackNavigator({
     Checklist: ChecklistScreen,
     CheckIn: CheckInScreen,

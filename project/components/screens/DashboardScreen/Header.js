@@ -24,8 +24,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: 'lightgray',
-    width: '100%',
-    padding: '4%'
+    width: '100%'
   },
   rowContainer: {
     alignItems: 'center',

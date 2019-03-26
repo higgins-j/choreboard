@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, KeyboardAvoidingView, ListView, ScrollView} from 'react-native';
+import {StyleSheet, KeyboardAvoidingView, ListView, ScrollView, SafeAreaView } from 'react-native';
 
 import TopBar from '../../mainbars/TopBar';
 import TopSubBar from '../../mainbars/TopSubBar';
@@ -21,7 +21,7 @@ export default class DashboardScreen extends React.Component {
 
     render() {
         return (
-            <KeyboardAvoidingView style = {styles.container}>
+            <SafeAreaView style = {styles.container}>
                 <TopBar />
                 <TopSubBar />
                 <Header />
@@ -33,7 +33,7 @@ export default class DashboardScreen extends React.Component {
                         renderRow = {(data) => <Leaderboard {...data} />}
                     />
                 </ScrollView>
-            </KeyboardAvoidingView>
+            </SafeAreaView>
         )
     }
 }

@@ -9,7 +9,7 @@ export default class AwardsBar extends React.Component {
       <View style = {styles.container}>
         <View style = {styles.rowContainer}>
           <Text style = {styles.giftText}><IconDie name = 'die-four' color = 'gray'></IconDie> Highest Player Points</Text>
-          <Text style = {styles.gameCategoryText}><Icon name = 'gift' color = 'gray'></Icon> 2 Extra Video Game Hours</Text>
+          <Text style = {styles.gameCategoryText}><Icon name = 'gift' color = 'gray'></Icon> 2 Extra Game Hours</Text>
         </View>
       </View>
     )
@@ -42,5 +42,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     padding: '4%'
   }
-  
+
 });

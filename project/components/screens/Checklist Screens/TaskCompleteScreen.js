@@ -38,7 +38,7 @@ export default class TaskCompleteScreen extends React.Component {
                 <Text style = {styles.placeText}>
                     You have been awarded <Text style = {styles.NFCtext}>15</Text> points.
                 </Text>
-                
+
             </KeyboardAvoidingView>
         )
     }

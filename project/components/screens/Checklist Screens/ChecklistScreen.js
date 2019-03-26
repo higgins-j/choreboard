@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, KeyboardAvoidingView, ScrollView, View, Text, TouchableOpacity, TouchableWithoutFeedback} from 'react-native';
+import {StyleSheet, KeyboardAvoidingView, ScrollView, View, Text, TouchableOpacity, TouchableWithoutFeedback, SafeAreaView } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Accordion from 'react-native-collapsible/Accordion';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -37,7 +37,7 @@ export default class ChecklistScreen extends React.Component {
             </Animatable.View>
         );
     };
-    
+
     renderContent = (section, _, isActive) => {
         return (
             <Animatable.View
@@ -97,14 +97,14 @@ export default class ChecklistScreen extends React.Component {
 
     render() {
         return (
-            <KeyboardAvoidingView style = {styles.container}>
+            <SafeAreaView style = {styles.container}>
                 <TopBar />
                 <TopSubBar />
 
                 <View style = {styles.rowContainer}>
                     <TouchableOpacity
                         style = {[button.container, {
-                            backgroundColor: this.state.viewMyChoresList ? '#009986' : 'lightgray' 
+                            backgroundColor: this.state.viewMyChoresList ? '#009986' : 'lightgray'
                         }]}
                         activeOpacity = {.25}
                         onPress = {() => {this.setState({
@@ -133,8 +133,8 @@ export default class ChecklistScreen extends React.Component {
                         </Text>
                     </TouchableOpacity>
                 </View>
-                {this.renderChoreList()}                
-            </KeyboardAvoidingView>
+                {this.renderChoreList()}
+            </SafeAreaView>
         )
     }
 }
