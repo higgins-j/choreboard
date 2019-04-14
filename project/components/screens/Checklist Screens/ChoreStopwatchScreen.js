@@ -20,7 +20,7 @@ export default class MessagesScreen extends React.Component {
             choreComplete: ''
         };
     }
-
+    
     render() {
         return (
             <KeyboardAvoidingView style = {styles.container}>
@@ -43,6 +43,7 @@ export default class MessagesScreen extends React.Component {
                 <Text />
                 <Stopwatch
                     start = {this.state.isStarted}
+                    reset = {true}
                     options = {stopwatchStyle}
                     getTime = {(time) => {
                         currTime = time;

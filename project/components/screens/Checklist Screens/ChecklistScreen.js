@@ -3,6 +3,7 @@ import {StyleSheet, KeyboardAvoidingView, ScrollView, View, Text, TouchableOpaci
 import * as Animatable from 'react-native-animatable';
 import Accordion from 'react-native-collapsible/Accordion';
 import Icon from 'react-native-vector-icons/AntDesign';
+import NfcManager, {Ndef, NfcTech, ByteParser} from 'react-native-nfc-manager';
 
 import TopBar from '../../mainbars/TopBar';
 import TopSubBar from '../../mainbars/TopSubBar';
@@ -19,8 +20,25 @@ export default class ChecklistScreen extends React.Component {
         this.state = {
             viewMyChoresList: true, //default list view
             viewOpenChoresList: false,
-            activeSections: []
+            activeSections: [],
+            supported: true
         };
+    }
+
+    componentDidMount() {
+        NfcManager.isSupported()
+            .then(supported => {
+                this.setState({supported});
+                if (supported) {
+                    this._startNFC();
+                }
+            });
+    }
+
+    componentWillUnmount() {
+        if (this._stateChangedSubscription) {
+            this._stateChangedSubscription.remove();
+        }
     }
 
     setSections = (sections) => {
@@ -49,7 +67,7 @@ export default class ChecklistScreen extends React.Component {
                 {section.subcategory.map((item, key) => (
                     <View key = {key} style = {styles.item}>
                         <TouchableOpacity
-                            onPress = {() => this.props.navigation.navigate('ChoreStopwatch', {chore: item.value})}>
+                            onPress = {() => this.props.navigation.navigate('ChecklistStart', {chore: item.value})}>
                             <Text style = {styles.text} animation = {isActive ? 'bounceIn' : undefined}>
                                 {item.value}
                             </Text>
@@ -133,9 +151,21 @@ export default class ChecklistScreen extends React.Component {
                         </Text>
                     </TouchableOpacity>
                 </View>
-                {this.renderChoreList()}                
+                {this.renderChoreList()}              
             </KeyboardAvoidingView>
         )
+    }
+
+    _startNFC() {
+        NfcManager.start()
+            .then(result => {
+                console.log("Success!!!!!!!!!!!");
+                console.log(result);
+            })
+            .catch(err => {
+                console.log("Nope.");
+                console.log(err);
+            });
     }
 }
 

@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import DashboardScreen from './components/screens/DashboardScreen/DashboardScreen';
 import ChecklistScreen from './components/screens/Checklist Screens/ChecklistScreen';
 import CheckInScreen from './components/screens/Checklist Screens/CheckInScreen';
+import ChecklistStartScreen from './components/screens/Checklist Screens/ChecklistStartScreen';
 import ChoreStopwatchScreen from './components/screens/Checklist Screens/ChoreStopwatchScreen';
 import TaskCompleteScreen from './components/screens/Checklist Screens/TaskCompleteScreen';
 import StatisticsScreen from './components/screens/StatisticsScreen/StatisticsScreen';
@@ -12,6 +13,7 @@ import MessagesScreen from './components/screens/MessagesScreen/MessagesScreen';
 
 const ChecklistStack = createStackNavigator({
     Checklist: ChecklistScreen,
+    ChecklistStart: ChecklistStartScreen,
     CheckIn: CheckInScreen,
     ChoreStopwatch: ChoreStopwatchScreen,
     TaskComplete: TaskCompleteScreen,
